@@ -1,0 +1,32 @@
+<form class="student-form" autocomplete="off" [formGroup]="studentForm" (submit)="submitForm()" >
+
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" formControlName="name" required />
+      @if (name.invalid) {
+      <mat-error>Name must be at least 3 characters long.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Faculty</mat-label>
+      <input matInput placeholder="Faculty" formControlName="faculty" required />
+      @if (faculty.invalid) {
+      <mat-error>Faculty must be at least 5 characters long.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Semester</mat-label>
+      <input matInput placeholder="Semester" formControlName="semester" required />
+      @if (semester.invalid) {
+      <mat-error>Semester must be a number between 1 and 5.</mat-error>
+      }
+    </mat-form-field>
+
+    <br />
+    <button mat-raised-button color="primary" type="submit" [disabled]="studentForm.invalid">
+      Add
+    </button>
+
+  </form>
