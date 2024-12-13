@@ -1,0 +1,48 @@
+<form class="course-form" autocomplete="off" [formGroup]="courseForm" (submit)="submitForm()" >
+
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Title" formControlName="title" required />
+      @if (title.invalid) {
+      <mat-error>Title must be at least 3 characters long.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Description" formControlName="description" required />
+      @if (description.invalid) {
+      <mat-error>Description must be at least 3 characters long.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Timetable</mat-label>
+      <input matInput placeholder="Timetable" formControlName="timetable" required />
+      @if (description.invalid) {
+      <mat-error>Timetable must be at least 3 characters long.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Room</mat-label>
+      <input matInput placeholder="Room" formControlName="room" required />
+      @if (room.invalid) {
+      <mat-error>Room must be at least 3 characters long.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Student_limit</mat-label>
+      <input matInput placeholder="Student_limit" formControlName="student_limit" required />
+      @if (student_limit.invalid) {
+      <mat-error>Student limit must be a number minimum 1.</mat-error>
+      }
+    </mat-form-field>
+
+    <br />
+    <button mat-raised-button color="primary" type="submit" [disabled]="courseForm.invalid">
+      Add
+    </button>
+
+  </form>
