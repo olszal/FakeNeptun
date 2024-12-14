@@ -1,6 +1,6 @@
 import * as express from "express";
 import { ObjectId } from "mongodb";
-import { collections } from "./database";
+import { collections } from "../repository/database";
 
 export const studentRouter = express.Router();
 studentRouter.use(express.json());

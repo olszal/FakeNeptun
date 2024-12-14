@@ -1,5 +1,5 @@
 import * as mongodb from "mongodb";
-import { Student } from "./student";
+import { Student } from "../model/student";
 
 export const collections: {
     students?: mongodb.Collection<Student>;
