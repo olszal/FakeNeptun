@@ -15,7 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class TeachersListComponent implements OnInit {
   teachers$ = {} as WritableSignal<Teacher[]>;
-  displayedColumns: string[] = [ 'col-name', 'col-faculty', 'col-semester', 'col-action' ]
+  displayedColumns: string[] = [ 'col-name', 'col-department', 'col-action' ]
 
   constructor(private teachersService: TeacherService) {}
 

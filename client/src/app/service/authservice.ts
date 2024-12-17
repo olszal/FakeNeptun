@@ -6,11 +6,11 @@ import { User } from '../model/user'
     providedIn: 'root'
 })
 export class AuthService {
-     
-    constructor(private http: HttpClient) {
-    }
+    user$ = signal<User>({} as User);
+    constructor(private http: HttpClient) {}
       
     login(user: User) {
-        return this.http.post<User>('/login', user);
+        console.log("Logging in...");
+        return this.http.post('/login', user);
     }
 }

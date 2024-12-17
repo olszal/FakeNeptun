@@ -19,10 +19,10 @@ export class LoginComponent {
   login(user: User) {
     this.authService.login(user).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/courses']);
       },
       error: (error) => {
-        alert('Failed to login');
+        alert('Failed toooo login');
         console.error(error);
       },
     });

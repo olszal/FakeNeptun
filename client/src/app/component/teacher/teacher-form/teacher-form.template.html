@@ -4,14 +4,14 @@
       <mat-label>Name</mat-label>
       <input matInput placeholder="Name" formControlName="name" required />
       @if (name.invalid) {
-      <mat-error>Name must be at least 3 characters long.</mat-error>
+      <mat-error>Name must be at least 5 characters long.</mat-error>
       }
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Department</mat-label>
       <input matInput placeholder="Department" formControlName="department" required />
-      @if (faculty.invalid) {
+      @if (department.invalid) {
       <mat-error>Department must be at least 5 characters long.</mat-error>
       }
     </mat-form-field>

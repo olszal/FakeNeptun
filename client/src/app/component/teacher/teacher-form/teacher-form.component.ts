@@ -25,8 +25,8 @@ export class TeacherFormComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.teacherForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      department: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(5)]],
+      department: ['', [Validators.required, Validators.minLength(5)]],
     });
 
     effect(() => {
@@ -40,7 +40,7 @@ export class TeacherFormComponent {
   get name() {
     return this.teacherForm.get('name')!;
   }
-  get faculty() {
+  get department() {
     return this.teacherForm.get('department')!;
   }
 

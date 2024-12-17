@@ -32,6 +32,7 @@ export class TeacherService {
   }
 
   createTeacher(teacher: Teacher) {
+    console.log(teacher);
     teacher.activated = false;
     return this.httpClient.post(`${this.url}/teachers`, teacher, { responseType: 'text' });
   }

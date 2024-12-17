@@ -19,7 +19,7 @@ export class AddStudentComponent {
   addStudent(student: Student) {
     this.studentService.createStudent(student).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/students']);
       },
       error: (error) => {
         alert('Failed to create student');

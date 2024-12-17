@@ -19,7 +19,7 @@ export class AddCourseComponent {
   addCourse(course: Course) {
     this.courseService.createCourse(course).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/courses']);
       },
       error: (error) => {
         alert('Failed to create course');

@@ -4,13 +4,13 @@
       <mat-label>User</mat-label>
       <input matInput placeholder="User" formControlName="username" required />
       @if (username.invalid) {
-      <mat-error>Username must be at least 3 characters long.</mat-error>
+      <mat-error>Username must be at least 5 characters long.</mat-error>
       }
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput placeholder="Password" formControlName="password" required />
+      <input matInput type="password" placeholder="Password" formControlName="password" required />
       @if (password.invalid) {
       <mat-error>Password must be at least 5 characters long.</mat-error>
       }

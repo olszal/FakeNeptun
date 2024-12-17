@@ -25,7 +25,7 @@ export class StudentFormComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.studentForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(5)]],
       faculty: ['', [Validators.required, Validators.minLength(5)]],
       semester: [1, [Validators.required, Validators.min(1)]],
     });

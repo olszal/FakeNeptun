@@ -19,7 +19,7 @@ export class AddTeacherComponent {
   addTeacher(teacher: Teacher) {
     this.teacherService.createTeacher(teacher).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/teachers']);
       },
       error: (error) => {
         alert('Failed to create teacher');
