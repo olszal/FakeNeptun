@@ -58,7 +58,7 @@ async function applySchemaValidation(db: mongodb.Db) {
     const schemaTeacher = {
         $jsonSchema: {
             bsonType: "object",
-            required: ["name", "department", "course_ids"],
+            required: ["name", "department"],
             additionalProperties: false,
             properties: {
                 _id: {},

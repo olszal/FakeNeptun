@@ -32,7 +32,7 @@ export class EditStudentComponent implements OnInit {
       .updateStudent(this.student()._id || '', student)
       .subscribe({
         next: () => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/students']);
         },
         error: (error) => {
           alert('Failed to update student');

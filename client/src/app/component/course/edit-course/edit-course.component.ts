@@ -32,7 +32,7 @@ export class EditCourseComponent implements OnInit {
       .updateCourse(this.course()._id || '', course)
       .subscribe({
         next: () => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/courses']);
         },
         error: (error) => {
           alert('Failed to update course');

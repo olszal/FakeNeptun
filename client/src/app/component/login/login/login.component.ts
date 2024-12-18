@@ -19,6 +19,7 @@ export class LoginComponent {
   login(user: User) {
     this.authService.login(user).subscribe({
       next: () => {
+        this.authService.saveUser(user);
         this.router.navigate(['/courses']);
       },
       error: (error) => {
@@ -26,5 +27,9 @@ export class LoginComponent {
         console.error(error);
       },
     });
+  }
+
+  getService() {
+    return this.authService;
   }
 }

@@ -1,14 +1,19 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Course } from '../model/course';
+import { Teacher } from '../model/teacher';
+import { AuthService } from './authservice';
+import { LoginComponent } from '../component/login/login/login.component';
+import { User } from '../model/user'; 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CourseService {
   private url = 'http://localhost:5200';
   courses$ = signal<Course[]>([]);
   course$ = signal<Course>({} as Course);
+  
  
   constructor(private httpClient: HttpClient) { }
 
@@ -31,8 +36,11 @@ export class CourseService {
     });
   }
 
-  createCourse(course: Course) {
+  createCourse(course: Course, user: User) {
     course.accepted = false;
+    course.student_ids = [];
+    course.teacher_id = user._id || "";
+    course.student_ids = [];
     return this.httpClient.post(`${this.url}/courses`, course, { responseType: 'text' });
   }
 

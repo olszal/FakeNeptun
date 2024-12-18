@@ -32,12 +32,13 @@ export class EditTeacherComponent implements OnInit {
       .updateTeacher(this.teacher()._id || '', teacher)
       .subscribe({
         next: () => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/teacher']);
         },
         error: (error) => {
           alert('Failed to update teacher');
           console.error(error);
         },
       });
+    this.teacherService.getTeachers();
   }
 }
